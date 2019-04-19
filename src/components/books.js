@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Bookshelf from './bookshelf1'
 import propTypes from 'prop-types'
 import '../css/books.css'
 class Books extends Component {
@@ -7,18 +8,12 @@ class Books extends Component {
     }
     render() {
         return(
-            <div className="col-sm-2">
-                <div className="card card-view">
-                    <div className="card-body dark">
-                        <Note title=""
-                            {this.props.title}
-                        />
-                        <p>
-                            Written by: {this.props.author}
-                            Release: {this.props.year}
-                            Genre: {this.props.genre}
-                        </p>
-                        <button className="btn btn-warning edit-button">Read</button>
+            <div>
+                <div className="div-Books">
+                    <div className="row">
+                        <Note title="Red is great" author="Pi Rules" year="2008" genre="Horror Fiction"></Note> 
+                        <Note title="If I won the Lottery" author="Stingy MoFo" year="2019" genre="Fiction"></Note>
+                        <Note title="Macs over PC" author="Sorry Billy G." year="2019" genre="Memoir"></Note>               
                     </div>
                 </div>
             </div>
