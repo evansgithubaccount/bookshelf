@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../css/bookshelf1.css'
+import Books from './books'
 
 class Bookshelf extends Component {
     constructor(){
@@ -7,11 +8,13 @@ class Bookshelf extends Component {
     }
 
     render() {
-       return ( 
+       return (
         <div>
             <div className="shelf">
                 <div className="row">
-                    
+                    <Books />
+                    <Books />
+                    <Books />
                 </div>
             </div>
         </div>

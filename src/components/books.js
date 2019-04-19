@@ -12,7 +12,7 @@ class Books extends Component {
                     <div className="card-body dark">
                         <Note title=""
                             {this.props.title}
-                        </h5>
+                        />
                         <p>
                             Written by: {this.props.author}
                             Release: {this.props.year}
