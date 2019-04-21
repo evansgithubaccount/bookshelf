@@ -11,8 +11,8 @@ class Books extends Component {
             <div className="col-sm-2">
                 <div className="card card-view">
                     <div className="card-body dark">
-                        <Note title=""
-                            {this.props.title}
+                        <h5 Note title=""
+                            {this.props.title}>
                         </h5>
                         <p>
                             Written by: {this.props.author}
