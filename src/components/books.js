@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Bookshelf from './bookshelf1'
 import propTypes from 'prop-types'
 import '../css/books.css'
 class Books extends Component {
@@ -18,7 +19,7 @@ class Books extends Component {
                             Release: {this.props.year}
                             Genre: {this.props.genre}
                         </p>
-                        <button className="btn btn-warning edit-button">Read</button>
+                        <button className="btn btn-success edit-button">Read</button>
                     </div>
                 </div>
             </div>
