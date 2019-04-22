@@ -15,6 +15,7 @@ class Books extends Component {
             <div className="col-sm-auto">
                 <div className="card card-view">
                     <div className="card-body dark">
+                    <img scr ="..." alt = " "></img>
                         <h5 Note title="">
                             {this.props.title}
                         </h5>
