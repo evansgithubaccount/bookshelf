@@ -12,8 +12,8 @@ class Bookshelf extends Component {
         <div>
             <div className="shelf">
                 <div className="row">
-                    <Books />
-                    <Books />
+                    <Books title="Beloved" author="Toni Morrison" year="1987" genre="Magical Realism"/>
+                    <Books title="Dandelion Wine" author="Ray Bradbury" year="1957"/>
                     <Books />
                 </div>
             </div>

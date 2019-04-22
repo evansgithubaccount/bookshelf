@@ -12,7 +12,7 @@ class Books extends Component {
     render() {
         return(
 
-            <div className="col-sm-2">
+            <div className="col-sm-auto">
                 <div className="card card-view">
                     <div className="card-body dark">
                         <h5 Note title="">
@@ -20,8 +20,8 @@ class Books extends Component {
                         </h5>
                         <p>
                             Written by: {this.props.author}
-                            Release: {this.props.year}
-                            Genre: {this.props.genre}
+                            <br></br>Released: {this.props.year}
+                            <br></br>Genre: {this.props.genre}
                         </p>
                         <button className="btn btn-success edit-button">Read</button>
                         </div>
