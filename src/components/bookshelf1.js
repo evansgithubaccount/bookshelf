@@ -8,18 +8,21 @@ class Bookshelf extends Component {
         this.state = {
             books: [
                 {
+                    cover: '',
                     title: 'Beloved',
                     author: 'Toni Morrison',
                     year: '1987',
                     genre: 'Magical Realism'
                 },
                 {
+                    cover:'',
                     title: 'Dandelion Wine',
                     author: 'Ray Bradbury',
                     year: '1957',
                     genre: 'Science Fiction'
                 },
                 {
+                    cover:'',
                     title: 'Chocolat',
                     author: 'Joanne Harris',
                     year: '1999',

@@ -8,8 +8,9 @@
 .p{
     text-align: center;
 }
-.img{
-    /*size: 20px;*/
+#images{
+    height: 150px;
+    width: 100px;
 }
 .body{
 
