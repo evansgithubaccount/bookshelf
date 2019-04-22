@@ -9,6 +9,31 @@ class Books extends Component {
     constructor () {
         super()
     }
+    componentWillMount() {
+        this.state = {
+            title: this.props.title,
+            author: this.props.author,
+            year: this.props.year,
+            genre: this.props.genre,
+            editMode: false
+        }
+    }
+
+    handleEdit(){
+        this.setState({
+            editMode: true
+        })
+    }
+
+    handleSave(){
+        this.setState({
+            title: this.refs.titleContent.value,
+            author: this.refs.authorContent.value,
+            year: this.refs.yearContent.value,
+            genre: this.refs.genreContent.value,
+            editMode: false
+        })
+    }
     render() {
         return(
 
@@ -23,7 +48,8 @@ class Books extends Component {
                             <br></br>Released: {this.props.year}
                             <br></br>Genre: {this.props.genre}
                         </p>
-                        <button className="btn btn-success edit-button">Read</button>
+                        <button className="btn btn-success edit-button">Read</button>   
+                        <button className="btn btn-danger remove-button">Remove</button>
                         </div>
                     </div>
                 </div>

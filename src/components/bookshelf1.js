@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'; 
 import '../css/bookshelf1.css';
-import Books from './books.js';
+import Books from './books.js';   
 
-class Bookshelf extends Component {
+class Bookshelf extends Component {  
     constructor(){
         super();
         this.state = {
@@ -35,7 +35,7 @@ class Bookshelf extends Component {
             <div className="shelf">
                 <div className="row">
                     {
-                        this.state.books.map(book => {
+                        this.state.books.map(function(book) {
                             return <Books title={book.title} author={book.author} year={book.year} genre={book.genre}/>
                         })
                     }
