@@ -24,17 +24,10 @@ class Books extends Component {
                             Genre: {this.props.genre}
                         </p>
                         <button className="btn btn-success edit-button">Read</button>
-
-            <div>
-                <div className="div-Books">
-                    <div className="row">
-                        <Note title="Red is great" author="Pi Rules" year="2008" genre="Horror Fiction"></Note> 
-                        <Note title="If I won the Lottery" author="Stingy MoFo" year="2019" genre="Fiction"></Note>
-                        <Note title="Macs over PC" author="Sorry Billy G." year="2019" genre="Memoir"></Note>               
-
+                        </div>
                     </div>
                 </div>
-            </div>
+
         )
     }
 }
