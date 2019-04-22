@@ -16,10 +16,10 @@ class Books extends Component {
                 <div className="card card-view">
                     <div className="card-body dark">
                     <img id = "images" src=" https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt = " " />
-                        <h5 Note title="">
+                        <h5 id ="ti1" Note title="">
                             {this.props.title}
                         </h5>
-                        <p>
+                        <p id ="blurb">
                             Written by: {this.props.author}
                             <br></br>Released: {this.props.year}
                             <br></br>Genre: {this.props.genre}
