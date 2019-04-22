@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bookshelf from './components/bookshelf1'
+import './index.css';
+import Bookshelf from './components/bookshelf1.js'
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Bookshelf />, document.getElementById('root'));
