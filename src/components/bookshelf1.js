@@ -31,7 +31,7 @@ class Bookshelf extends Component {
 
     render() {
        return (
-        <div>
+        <div class="other">
             <div className="shelf">
                 <div className="row">
                     {
@@ -49,10 +49,10 @@ class Bookshelf extends Component {
     }
     addBook() {
         this.state.books.push({
-            title: 'New Book Title',
-            author: 'New Bood Author',
-            year: 'New Book Year',
-            genre: 'New Book Genre'
+            title: prompt('Enter Book Title'),
+            author: prompt('Enter the name of the author'),
+            year: prompt('Enter Year that the book was published'),
+            genre: prompt('Enter Book Genre')
         });
         this.setState({
             books: this.state.books
