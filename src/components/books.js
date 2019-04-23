@@ -87,15 +87,7 @@ class Books extends Component {
       buttonArea = (
         <div>
           <button className="btn btn-info" onClick={this.handleSave.bind(this)}>Save</button>
-          {this.state.notes.map(note => {
-              return (
-                <Books
-                  key={book.id}
-                  id={book.id}
-                  deleteHandler={this.deleteBook.bind(this)}
-                />
-              );
-            })}
+          
         </div>
       );
     } else {
@@ -119,7 +111,7 @@ class Books extends Component {
       <div className="col-sm-auto">
         <div className="card card-view">
           <div className="card-body dark">
-            <img id="images" src={imageURL} alt="" />
+            <img id="images" src={imageURL}   style={{justifyContent: 'center',alignItems: 'center',}} alt="" />
             {titleElement}
             Written By: {authorElement}
             <br></br>Published In: {yearElement}
