@@ -42,32 +42,6 @@ class Books extends Component {
     this.setState({
       textValue: 'Book has been read!!!'
     })
-}
-    handleEdit(){
-        this.setState({
-            editMode: true
-        })
-    }
-    handleRead(){
-      this.setState({
-        editMode: true
-      })
-    }
-
-    handleSave(){
-        this.setState({
-            title: this.refs.titleContent.value,
-            author: this.refs.authorContent.value,
-            year: this.refs.yearContent.value,
-            genre: this.refs.genreContent.value,
-            editMode: false
-        })
-    }
-    handleDelete() {
-        this.props.deleteHandler(this.props.id);
-      }
-
-    render() {
   }
   handleEdit() {
     this.setState({
@@ -140,12 +114,6 @@ class Books extends Component {
           <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
           <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
           <p>{this.state.textValue}</p>
-          <button
-            className="btn btn-danger"
-            onClick={this.handleDelete.bind(this)}
-          >
-            Delete
-          </button>
         </div>
         
       );
