@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import '../css/bookshelf1.css';
+import '../css/bookshelf1.css';
 import Books from './books.js';
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
@@ -39,11 +39,11 @@ class Bookshelf extends Component {
     }
     addBook() {
         this.state.books.push({
-            id: Date.now()
-            // title: prompt('Enter Book Title'),
-            // author: prompt('Enter the name of the author'),
-            // year: prompt('Enter Year that the book was published'),
-            // genre: prompt('Enter Book Genre')
+            id: Date.now(),
+            title: prompt('Enter Book Title'),
+            author: prompt('Enter the name of the author'),
+            year: prompt('Enter Year that the book was published'),
+            genre: prompt('Enter Book Genre')
         });
         this.setState({
             books: this.state.books
@@ -63,35 +63,51 @@ class Bookshelf extends Component {
       } 
     render() {
         return (
-
-            <div className='Component-Bg'style={{ backgroundImage: 'url(' + imgUrl + ')', backgroundSize: 'cover',
-                    backgroundPosition: 'center center', backgroundRepeat: 'no-repeat', }}>
-                <div class="other">
-                    <div className="shelf">
-                        <div className="row">
-                        {this.state.books.map(book => {
-              return (
-                <Books
-                  key={book.id}
-                  id={book.id}
-                  deleteHandler={this.deleteBooks.bind(this)}
-                />
-              );
-              })}
-                            {/* {
-                                this.state.books.map(function (book) {
-                                    return (<Books title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} />)
-                                })
-                            } */}
-
-                        </div>
-                    </div>
-                    <div>
-                        <button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add a Book</button>
-                    </div>
+          <div
+            className="Component-Bg"
+            style={{
+              backgroundImage: "url(" + imgUrl + ")",
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat"
+            }}
+          >
+            <div class="other">
+              <div className="shelf">
+                <div className="row">
+                  {this.state.books.map(function(book) {
+                    return (
+                      <Books
+                        title={book.title}
+                        author={book.author}
+                        year={book.year}
+                        genre={book.genre}
+                        image={book.image}
+                      />
+                    );
+                  })}
+                  {this.state.books.map(book => {
+                    return (
+                      <Books
+                        key={book.id}
+                        id={book.id}
+                        deleteHandler={this.deleteBooks.bind(this)}
+                      />
+                    );
+                  })}
                 </div>
+              </div>
+              <div>
+                <button
+                  className="btn btn-success add-button"
+                  onClick={this.addBook.bind(this)}
+                >
+                  Add a Book
+                </button>
+              </div>
             </div>
-        )
+          </div>
+        );
     }
      
 }
