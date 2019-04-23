@@ -13,7 +13,6 @@ class Books extends Component {
     }
     this.onPressButton = this.onPressButton.bind(this);
   }
-<<<<<<< HEAD
     componentWillMount() {
         this.state = {
             title: this.props.title,
@@ -29,7 +28,6 @@ class Books extends Component {
             textValue: 'Book has been read!!!'
         })
     }
-=======
   componentWillMount() {
     this.state = {
       title: this.props.title,
@@ -44,9 +42,7 @@ class Books extends Component {
     this.setState({
       textValue: 'Book has been read!!!'
     })
-<<<<<<< HEAD
 }
->>>>>>> f64976ab470e0bf4123015888f767515ac3b400f
     handleEdit(){
         this.setState({
             editMode: true
@@ -67,15 +63,11 @@ class Books extends Component {
             editMode: false
         })
     }
-<<<<<<< HEAD
-=======
     handleDelete() {
         this.props.deleteHandler(this.props.id);
       }
->>>>>>> f64976ab470e0bf4123015888f767515ac3b400f
 
     render() {
-=======
   }
   handleEdit() {
     this.setState({
@@ -101,7 +93,6 @@ class Books extends Component {
     })
   }
   render() {
->>>>>>> daa2b9daeddbdb3caac084c50067acacdf0b358e
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     let imageURL = `${this.props.image}`
     if (this.state.editMode) {
