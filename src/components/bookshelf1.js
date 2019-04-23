@@ -1,6 +1,11 @@
 import React, {Component} from 'react'; 
 import '../css/bookshelf1.css';
 import Books from './books.js';   
+const imageSearch = require('google-images')
+
+const client = new imageSearch('graceful-tenure-238514', 'AIzaSyDIn7MPjLVLNgOvmy2GaP6fQWCXNmaq2X8');
+const options = {page:1};
+
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
 
@@ -63,13 +68,23 @@ class Bookshelf extends Component {
         </div>
        )
     }
+
+    searchImage(){
+        let whtvr = (client.search(`${this.props.title} by ${this.props.author}`, options)
+            .then(images => {
+                return images[0]
+            }))
+        return whtvr.url;
+    }
+
     addBook() {
         this.state.books.push({
             title: prompt('Enter Book Title'),
             author: prompt('Enter the name of the author'),
             year: prompt('Enter Year that the book was published'),
-            genre: prompt('Enter Book Genre')
+            genre: prompt('Enter Book Genre'),
         });
+        
         this.setState({
             books: this.state.books
         })

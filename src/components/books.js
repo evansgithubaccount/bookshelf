@@ -4,7 +4,6 @@ import Bookshelf from './bookshelf1.js';
 import propTypes from 'prop-types';
 import '../css/books.css';
 
-
 class Books extends Component {
     constructor () {
         super();
@@ -16,12 +15,6 @@ class Books extends Component {
 
 
   }
-
-
-
-
-
-
     componentWillMount() {
         this.state = {
             title: this.props.title,
@@ -32,11 +25,11 @@ class Books extends Component {
             editMode: false
         }
     }
-onPressButton() {
-    this.setState({
-        textValue: 'Book has been read!!!'
-    })
-}
+    onPressButton() {
+        this.setState({
+            textValue: 'Book has been read!!!'
+        })
+    }
     handleEdit(){
         this.setState({
             editMode: true
@@ -57,6 +50,7 @@ onPressButton() {
             editMode: false
         })
     }
+
     render() {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     let imageURL = `${this.props.image}`
