@@ -4,6 +4,8 @@ import Bookshelf from './bookshelf1.js';
 import propTypes from 'prop-types';
 import '../css/books.css';
 
+const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
+
 class Books extends Component {
   constructor() {
     super();
@@ -15,13 +17,13 @@ class Books extends Component {
   }
   componentWillMount() {
     this.state = {
-      title: this.props.title,
-      author: this.props.author,
-      year: this.props.year,
-      genre: this.props.genre,
-      image: this.props.image,
+      title: GENERIC_NOTE_TITLE,
+      author: GENERIC_NOTE_AUTHOR,
+      year: GENERIC_NOTE_YEAR,
+      genre: GENERIC_NOTE_GENRE,
+      image: GENERIC_NOTE_IMAGE,
       editMode: false
-    }
+    };
   }
   onPressButton() {
     this.setState({
@@ -31,13 +33,13 @@ class Books extends Component {
   handleEdit() {
     this.setState({
       editMode: true
-    })
+    });
   }
  
   handleRead() {
     this.setState({
       editMode: true
-    })
+    });
   }
   handleSave() {
     this.setState({
@@ -46,7 +48,7 @@ class Books extends Component {
       year: this.refs.yearContent.value,
       genre: this.refs.genreContent.value,
       editMode: false
-    })
+    });
   }
   handleDelete() {
     this.props.deleteHandler(this.props.id);
@@ -58,7 +60,8 @@ class Books extends Component {
     if (this.state.editMode) {
       titleElement = (
         <h5><textarea
-          ref="titleContent"
+          ref="titleContent"us
+
           className="title-textarea"
           defaultValue={this.props.title}
         /></h5>

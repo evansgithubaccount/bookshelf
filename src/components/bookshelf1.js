@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import '../css/bookshelf1.css';
+// import '../css/bookshelf1.css';
 import Books from './books.js';
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
 
+ 
 class Bookshelf extends Component {
     constructor() {
         super();
@@ -34,27 +35,54 @@ class Bookshelf extends Component {
                     image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/JoanneHarris_Chocolat.jpg/220px-JoanneHarris_Chocolat.jpg"
                 }
             ]
-        }
+        };
+    }
+    addBook() {
+        this.state.books.push({
+            id: Date.now()
+            // title: prompt('Enter Book Title'),
+            // author: prompt('Enter the name of the author'),
+            // year: prompt('Enter Year that the book was published'),
+            // genre: prompt('Enter Book Genre')
+        });
+        this.setState({
+            books: this.state.books
+        });
     }
 
+    deleteBooks(id) {
+        let newBookArr = this.state.books;
+        newBookArr.map((book, index) => {
+          if (id === book.id) {
+            newBookArr.splice(index, 1);
+          }
+        });
+        this.setState({
+          books: newBookArr
+        });
+      } 
     render() {
         return (
 
-            <div className='Component-Bg'
-                style={{
-                    backgroundImage: 'url(' + imgUrl + ')',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                    backgroundRepeat: 'no-repeat',
-                }}>
+            <div className='Component-Bg'style={{ backgroundImage: 'url(' + imgUrl + ')', backgroundSize: 'cover',
+                    backgroundPosition: 'center center', backgroundRepeat: 'no-repeat', }}>
                 <div class="other">
                     <div className="shelf">
                         <div className="row">
-                            {
+                        {this.state.books.map(book => {
+              return (
+                <Books
+                  key={book.id}
+                  id={book.id}
+                  deleteHandler={this.deleteBooks.bind(this)}
+                />
+              );
+              })}
+                            {/* {
                                 this.state.books.map(function (book) {
-                                    return <Books title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} />
+                                    return (<Books title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} />)
                                 })
-                            }
+                            } */}
 
                         </div>
                     </div>
@@ -65,17 +93,7 @@ class Bookshelf extends Component {
             </div>
         )
     }
-    addBook() {
-        this.state.books.push({
-            title: prompt('Enter Book Title'),
-            author: prompt('Enter the name of the author'),
-            year: prompt('Enter Year that the book was published'),
-            genre: prompt('Enter Book Genre')
-        });
-        this.setState({
-            books: this.state.books
-        })
-    }
+     
 }
 
 
