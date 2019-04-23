@@ -94,7 +94,7 @@ class Books extends Component {
         <div>
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
           <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger">Delete</button>
+          <button className="btn btn-danger">Delete Book</button>
           <p>{this.state.textValue}</p>
          
         </div>

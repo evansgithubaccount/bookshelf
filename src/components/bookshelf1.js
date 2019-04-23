@@ -59,7 +59,7 @@ class Bookshelf extends Component {
                         </div>
                     </div>
                     <div>
-                        <button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add</button>
+                        <button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add a Book</button>
                     </div>
                 </div>
             </div>
