@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import '../css/bookshelf1.css';
 import Books from './books.js';   
 
+let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
+
 class Bookshelf extends Component {  
     constructor(){
         super();
@@ -34,6 +36,13 @@ class Bookshelf extends Component {
 
     render() {
        return (
+      
+    <div className = 'Component-Bg' 
+    style = {{ backgroundImage: 'url(' + imgUrl + ')', 
+               backgroundSize: 'cover', 
+               backgroundPosition: 'center center',
+               backgroundRepeat: 'no-repeat',
+             }}>
         <div class="other">
             <div className="shelf">
                 <div className="row">
@@ -47,6 +56,7 @@ class Bookshelf extends Component {
             <div>
                 <button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add</button>
             </div>
+        </div>
         </div>
        )
     }
@@ -62,5 +72,7 @@ class Bookshelf extends Component {
         })
     }
 }
+
+
 
 export default Bookshelf;
