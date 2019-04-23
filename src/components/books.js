@@ -48,6 +48,10 @@ class Books extends Component {
       editMode: false
     })
   }
+  handleDelete() {
+    this.props.deleteHandler(this.props.id);
+  }
+
   render() {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     let imageURL = `${this.props.image}`
@@ -83,6 +87,15 @@ class Books extends Component {
       buttonArea = (
         <div>
           <button className="btn btn-info" onClick={this.handleSave.bind(this)}>Save</button>
+          {this.state.notes.map(note => {
+              return (
+                <Books
+                  key={book.id}
+                  id={book.id}
+                  deleteHandler={this.deleteBook.bind(this)}
+                />
+              );
+            })}
         </div>
       );
     } else {
@@ -94,7 +107,7 @@ class Books extends Component {
         <div>
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
           <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger">Delete Book</button>
+          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete Book</button>
           <p>{this.state.textValue}</p>
          
         </div>
