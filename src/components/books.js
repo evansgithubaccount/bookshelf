@@ -7,8 +7,21 @@ import '../css/books.css';
 
 class Books extends Component {
     constructor () {
-        super()
+        super();
+
+     this.state = {
+    textValue: 'This book is unread.'
     }
+    this.onPressButton= this.onPressButton.bind(this);
+
+
+  }
+
+
+
+
+
+
     componentWillMount() {
         this.state = {
             title: this.props.title,
@@ -18,11 +31,20 @@ class Books extends Component {
             editMode: false
         }
     }
-
+onPressButton() {
+    this.setState({
+        textValue: 'Book has been read!!!'
+    })
+}
     handleEdit(){
         this.setState({
             editMode: true
         })
+    }
+    handleRead(){
+      this.setState({
+        editMode: true
+      })
     }
 
     handleSave(){
@@ -78,10 +100,12 @@ class Books extends Component {
       buttonArea = (
         <div>
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success read-button">Read</button>
+          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
+          <p>{this.state.textValue}</p>
         </div>
       );
     }
+
         return(
             <div className="col-sm-auto">
                 <div className="card card-view">
