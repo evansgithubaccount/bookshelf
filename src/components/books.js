@@ -39,6 +39,9 @@ class Books extends Component {
       editMode: true
     })
   }
+  handleDelete() {
+    this.props.deleteHandler(this.props.id);
+  }
   handleSave() {
     this.setState({
       title: this.refs.titleContent.value,
@@ -94,7 +97,7 @@ class Books extends Component {
         <div>
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
           <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger">Delete</button>
+          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
           <p>{this.state.textValue}</p>
         </div>
       );
