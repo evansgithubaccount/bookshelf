@@ -57,6 +57,10 @@ onPressButton() {
             editMode: false
         })
     }
+    handleDelete() {
+        this.props.deleteHandler(this.props.id);
+      }
+
     render() {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     let imageURL = `${this.props.image}`
@@ -104,7 +108,14 @@ onPressButton() {
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
           <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
           <p>{this.state.textValue}</p>
+          <button
+            className="btn btn-danger"
+            onClick={this.handleDelete.bind(this)}
+          >
+            Delete
+          </button>
         </div>
+        
       );
     }
 
