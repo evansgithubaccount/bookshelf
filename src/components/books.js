@@ -28,6 +28,7 @@ class Books extends Component {
             author: this.props.author,
             year: this.props.year,
             genre: this.props.genre,
+            image: this.props.image,
             editMode: false
         }
     }
@@ -58,6 +59,7 @@ onPressButton() {
     }
     render() {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
+    let imageURL = `${this.props.image}`
     if (this.state.editMode) {
       titleElement = (
         <h5><textarea
@@ -110,8 +112,7 @@ onPressButton() {
             <div className="col-sm-auto">
                 <div className="card card-view">
                     <div className="card-body dark">
-
-                        <img id = "images" src=" https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt = " " />
+                        <img id = "images" src={imageURL} alt = "" />
                         {titleElement}
                         Written By: {authorElement}
                         <br></br>Published In: {yearElement}
@@ -128,13 +129,15 @@ Books.defaultProps = {
     author: 'Author',
     year: 'Year',
     genre: 'Genre',
-    cover: ''
+    cover: '',
+    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
 }
 Books.propTypes = {
     title: propTypes.string,
     author: propTypes.string,
     year: propTypes.string,
     genre: propTypes.string,
-    cover: propTypes.string
+    cover: propTypes.string,
+    image: propTypes.string
 }
 export default Books
