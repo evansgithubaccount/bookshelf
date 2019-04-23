@@ -38,11 +38,11 @@ class Books extends Component {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     if (this.state.editMode) {
       titleElement = (
-        <textarea
+        <h5><textarea
           ref="titleContent"
           className="title-textarea"
           defaultValue={this.props.title}
-        />
+        /></h5>
       );
       authorElement = (
         <textarea
@@ -86,15 +86,15 @@ class Books extends Component {
             <div className="col-sm-auto">
                 <div className="card card-view">
                     <div className="card-body dark">
-                    <img id = "images" src=" https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt = " " />
-                            {titleElement}
-                            Written By: {authorElement}
-                            <br></br>Published In: {yearElement}
-                            <br></br>Genre: {genreElement}<br></br>   
+                        <img id = "images" src=" https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt = " " />
+                        {titleElement}
+                        Written By: {authorElement}
+                        <br></br>Published In: {yearElement}
+                        <br></br>Genre: {genreElement}<br></br>   
                         {buttonArea}
-                        </div>
                     </div>
                 </div>
+            </div>
         )
     }
 }
