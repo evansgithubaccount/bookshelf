@@ -96,10 +96,10 @@ class Books extends Component {
       yearElement = <span>{this.props.year}</span>;
       genreElement = <span>{this.props.genre}</span>;
       buttonArea = (
-        <div>
-          <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete Book</button>
+        <div className ="btm-group" role= "group">
+          <button className="btn btn-warning btn-sm" onClick={this.handleEdit.bind(this)}>Edit</button>
+          <button className="btn btn-success btn-sm read-button" onClick={this.onPressButton.bind(this)}>Read</button>
+          <button className="btn btn-danger btn-sm" onClick={this.handleDelete.bind(this)}>Delete Book</button>
           <p>{this.state.textValue}</p>
          
         </div>
