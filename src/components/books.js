@@ -15,6 +15,21 @@ class Books extends Component {
     }
     this.onPressButton = this.onPressButton.bind(this);
   }
+    componentWillMount() {
+        this.state = {
+            title: this.props.title,
+            author: this.props.author,
+            year: this.props.year,
+            genre: this.props.genre,
+            image: this.props.image,
+            editMode: false
+        }
+    }
+    onPressButton() {
+        this.setState({
+            textValue: 'Book has been read!!!'
+        })
+    }
   componentWillMount() {
     this.state = {
         title: this.props.title,
@@ -45,6 +60,9 @@ class Books extends Component {
     this.setState({
       editMode: true
     });
+  }
+  handleDelete() {
+    this.props.deleteHandler(this.props.id);
   }
   handleSave() {
     this.setState({
@@ -104,12 +122,20 @@ class Books extends Component {
       yearElement = <span>{this.props.year}</span>;
       genreElement = <span>{this.props.genre}</span>;
       buttonArea = (
+<<<<<<< HEAD
         <div className ="btm-group" role= "group">
           <button className="btn btn-warning btn-sm" onClick={this.handleEdit.bind(this)}>Edit</button>
           <button className="btn btn-success btn-sm read-button" onClick={this.onPressButton.bind(this)}>Read</button>
           <button className="btn btn-danger btn-sm" onClick={this.handleDelete.bind(this)}>Delete Book</button>
           <p>{this.state.textValue}</p>
          
+=======
+        <div>
+          <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
+          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
+          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
+          <p>{this.state.textValue}</p>
+>>>>>>> ac500909741c40abaa0fc4ef28fb894df8267c0b
         </div>
         
       );
