@@ -4,6 +4,7 @@ import Books from './books.js';
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
 
+ 
 class Bookshelf extends Component {
     constructor() {
         super();
@@ -37,17 +38,17 @@ class Bookshelf extends Component {
                     id: 3
                 }
             ]
-        }
+        };
     }
+
     addBook() {
         this.state.books.push({
             title: prompt('Enter Book Title'),
             author: prompt('Enter the name of the author'),
             year: prompt('Enter Year that the book was published'),
             genre: prompt('Enter Book Genre'),
-            id: Date.now()
-        });
-        
+            id: Date.now(),
+        })
         this.setState({
             books: this.state.books
         })
@@ -97,6 +98,7 @@ class Bookshelf extends Component {
             </div>
         )
     }
+
 
 
 }
