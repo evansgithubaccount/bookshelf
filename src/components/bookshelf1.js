@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/bookshelf1.css';
 import Books from './books.js';
 import {BrowserRouter, Route} from 'react-router-dom';
-import info from './bookInfo';
+import BookInformation from './bookInfo';
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
 
