@@ -75,7 +75,7 @@ class Bookshelf extends Component {
             <div class="other">
               <div className="shelf">
                 <div className="row">
-                  {this.state.books.map(function(book) {
+                  {/* {this.state.books.map(function(book) {
                     return (
                       <Books
                         title={book.title}
@@ -85,7 +85,7 @@ class Bookshelf extends Component {
                         image={book.image}
                       />
                     );
-                  })}
+                  })} */}
                   {this.state.books.map(book => {
                     return (
                       <Books
