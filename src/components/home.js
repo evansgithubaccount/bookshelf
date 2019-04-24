@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import info from './bookInfo';
+import BookInformation from './bookInfo';
 import Bookshelf from './bookshelf1';
 
 class Home extends React.Component{
@@ -8,7 +8,7 @@ class Home extends React.Component{
       return (
         <BrowserRouter>
             <Switch>
-                <Route path="/bookInfo" component={info}/>
+                <Route path="/bookInfo" component={BookInformation}/>
                 <Route component={Bookshelf} />
             </Switch>
         </BrowserRouter>

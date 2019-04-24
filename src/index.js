@@ -5,8 +5,6 @@ import Bookshelf from './components/bookshelf1.js'
 import Home from './components/home';
 
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter,Route } from 'react-router-dom';
-import info from '../src/components/bookInfo';
 
 ReactDOM.render(<Home/>, document.getElementById('root'));
 
