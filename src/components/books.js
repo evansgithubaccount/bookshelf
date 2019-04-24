@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Bookshelf from './bookshelf1.js';
 import propTypes from 'prop-types';
 import '../css/books.css';
+import {NavLink} from 'react-router-dom';
 
 //const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
 
@@ -117,12 +118,10 @@ class Books extends Component {
       yearElement = <span>{this.state.year}</span>;
       genreElement = <span>{this.state.genre}</span>;
       buttonArea = (
-
-
-        <div className ="btm-group" role= "group">
-          <button className="btn btn-warning btn-sm" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success btn-sm read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger btn-sm" onClick={this.handleDelete.bind(this)}>Delete Book</button>
+        <div>
+          <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
+          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}><NavLink to="/bookInfo">Read</NavLink></button>
+          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
           <p>{this.state.textValue}</p>
 
          
