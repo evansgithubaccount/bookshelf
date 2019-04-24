@@ -39,6 +39,7 @@ class Bookshelf extends Component {
                 }
             ]
 <<<<<<< HEAD
+<<<<<<< HEAD
         };
     }
     addBook() {
@@ -116,6 +117,9 @@ class Bookshelf extends Component {
     }
      
 =======
+=======
+
+>>>>>>> 64962dfc7242f967e3f931d30dc65f943728ee9e
         }
     }
     addBook() {
@@ -178,7 +182,10 @@ class Bookshelf extends Component {
     }
 
 
+<<<<<<< HEAD
 >>>>>>> ac500909741c40abaa0fc4ef28fb894df8267c0b
+=======
+>>>>>>> 64962dfc7242f967e3f931d30dc65f943728ee9e
 }
 
 
