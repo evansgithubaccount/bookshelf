@@ -4,6 +4,8 @@ import Bookshelf from './bookshelf1.js';
 import propTypes from 'prop-types';
 import '../css/books.css';
 
+//const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
+
 class Books extends Component {
   constructor() {
     super();
@@ -27,13 +29,18 @@ class Books extends Component {
     }
   componentWillMount() {
     this.state = {
-      title: this.props.title,
-      author: this.props.author,
-      year: this.props.year,
-      genre: this.props.genre,
-      image: this.props.image,
+        title: this.props.title,
+        author: this.props.author,
+        year: this.props.year,
+        genre: this.props.genre,
+        image: this.props.image,
+      // title: GENERIC_NOTE_TITLE,
+      // author: GENERIC_NOTE_AUTHOR,
+      // year: GENERIC_NOTE_YEAR,
+      // genre: GENERIC_NOTE_GENRE,
+      // image: GENERIC_NOTE_IMAGE,
       editMode: false
-    }
+    };
   }
   onPressButton() {
     this.setState({
@@ -43,17 +50,15 @@ class Books extends Component {
   handleEdit() {
     this.setState({
       editMode: true
-    })
+    });
   }
  
   handleRead() {
     this.setState({
       editMode: true
-    })
+    });
   }
-  handleDelete() {
-    this.props.deleteHandler(this.props.id);
-  }
+  
   handleSave() {
     this.setState({
       title: this.refs.titleContent.value,
@@ -61,8 +66,12 @@ class Books extends Component {
       year: this.refs.yearContent.value,
       genre: this.refs.genreContent.value,
       editMode: false
-    })
+    });
   }
+  handleDelete() {
+    this.props.deleteHandler(this.props.id);
+  }
+
   render() {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     let imageURL = `${this.props.image}`
@@ -70,6 +79,7 @@ class Books extends Component {
       titleElement = (
         <h5><textarea
           ref="titleContent"
+
           className="title-textarea"
           defaultValue={this.state.title}
         /></h5>
@@ -98,6 +108,7 @@ class Books extends Component {
       buttonArea = (
         <div>
           <button className="btn btn-info" onClick={this.handleSave.bind(this)}>Save</button>
+          
         </div>
       );
     } else {
@@ -106,11 +117,16 @@ class Books extends Component {
       yearElement = <span>{this.state.year}</span>;
       genreElement = <span>{this.state.genre}</span>;
       buttonArea = (
-        <div>
-          <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
+
+
+        <div className ="btm-group" role= "group">
+          <button className="btn btn-warning btn-sm" onClick={this.handleEdit.bind(this)}>Edit</button>
+          <button className="btn btn-success btn-sm read-button" onClick={this.onPressButton.bind(this)}>Read</button>
+          <button className="btn btn-danger btn-sm" onClick={this.handleDelete.bind(this)}>Delete Book</button>
           <p>{this.state.textValue}</p>
+
+         
+
         </div>
         
       );
@@ -120,7 +136,7 @@ class Books extends Component {
       <div className="col-sm-auto">
         <div className="card card-view">
           <div className="card-body dark">
-            <img id="images" src={imageURL} alt="" />
+            <img id="images" src={imageURL}   style={{justifyContent: 'center',alignItems: 'center',}} alt="" />
             {titleElement}
             Written By: {authorElement}
             <br></br>Published In: {yearElement}
