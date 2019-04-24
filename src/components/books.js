@@ -9,10 +9,6 @@ import '../css/books.css';
 class Books extends Component {
   constructor() {
     super();
-
-    this.state = {
-      textValue: 'This book is unread.'
-    }
     this.onPressButton = this.onPressButton.bind(this);
   }
     componentWillMount() {
@@ -22,7 +18,8 @@ class Books extends Component {
             year: this.props.year,
             genre: this.props.genre,
             image: this.props.image,
-            editMode: false
+            editMode: false,
+            textValue: 'This book is unread.'
         }
     }
     onPressButton() {
@@ -84,28 +81,28 @@ class Books extends Component {
           ref="titleContent"
 
           className="title-textarea"
-          defaultValue={this.props.title}
+          defaultValue={this.state.title}
         /></h5>
       );
       authorElement = (
         <textarea
           ref="authorContent"
           className="author-textarea"
-          defaultValue={this.props.author}
+          defaultValue={this.state.author}
         />
       );
       yearElement = (
         <textarea
           ref="yearContent"
           className="year-textarea"
-          defaultValue={this.props.year}
+          defaultValue={this.state.year}
         />
       );
       genreElement = (
         <textarea
           ref="genreContent"
           className="genre-textarea"
-          defaultValue={this.props.genre}
+          defaultValue={this.state.genre}
         />
       );
       buttonArea = (
@@ -115,10 +112,10 @@ class Books extends Component {
         </div>
       );
     } else {
-      titleElement = <h5>{this.props.title}</h5>;
-      authorElement = <span>{this.props.author}</span>;
-      yearElement = <span>{this.props.year}</span>;
-      genreElement = <span>{this.props.genre}</span>;
+      titleElement = <h5>{this.state.title}</h5>;
+      authorElement = <span>{this.state.author}</span>;
+      yearElement = <span>{this.state.year}</span>;
+      genreElement = <span>{this.state.genre}</span>;
       buttonArea = (
 
 
