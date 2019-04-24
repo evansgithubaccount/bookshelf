@@ -15,12 +15,12 @@ class Books extends Component {
   }
     componentWillMount() {
         this.state = {
-            title: this.props.title,
-            author: this.props.author,
-            year: this.props.year,
-            genre: this.props.genre,
-            image: this.props.image,
-            editMode: false
+          title: this.props.title,
+          author: this.props.author,
+          year: this.props.year,
+          genre: this.props.genre,
+          image: this.props.image,
+          editMode: false
         }
     }
     onPressButton() {
@@ -74,28 +74,28 @@ class Books extends Component {
         <h5><textarea
           ref="titleContent"
           className="title-textarea"
-          defaultValue={this.props.title}
+          defaultValue={this.state.title}
         /></h5>
       );
       authorElement = (
         <textarea
           ref="authorContent"
           className="author-textarea"
-          defaultValue={this.props.author}
+          defaultValue={this.state.author}
         />
       );
       yearElement = (
         <textarea
           ref="yearContent"
           className="year-textarea"
-          defaultValue={this.props.year}
+          defaultValue={this.state.year}
         />
       );
       genreElement = (
         <textarea
           ref="genreContent"
           className="genre-textarea"
-          defaultValue={this.props.genre}
+          defaultValue={this.state.genre}
         />
       );
       buttonArea = (

@@ -16,7 +16,7 @@ class Bookshelf extends Component {
                     year: '1987',
                     genre: 'Magical Realism',
                     image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/0997/9780099760115.jpg",
-                    id: Date.now()
+                    id: 1
                 },
                 {
                     cover:'',
@@ -25,7 +25,7 @@ class Bookshelf extends Component {
                     year: '1957',
                     genre: 'Science Fiction',
                     image: "https://images-na.ssl-images-amazon.com/images/I/51dfAXNdszL.jpg",
-                    id: (Date.now() + 1)
+                    id: 2
                 },
                 {
                     cover:'',
@@ -34,7 +34,7 @@ class Bookshelf extends Component {
                     year: '1999',
                     genre: 'Fiction',
                     image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/JoanneHarris_Chocolat.jpg/220px-JoanneHarris_Chocolat.jpg",
-                    id: (Date.now() + 2)
+                    id: 3
                 }
             ]
         }
