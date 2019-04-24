@@ -61,9 +61,7 @@ class Books extends Component {
       editMode: true
     });
   }
-  handleDelete() {
-    this.props.deleteHandler(this.props.id);
-  }
+  
   handleSave() {
     this.setState({
       title: this.refs.titleContent.value,
@@ -122,28 +120,16 @@ class Books extends Component {
       yearElement = <span>{this.props.year}</span>;
       genreElement = <span>{this.props.genre}</span>;
       buttonArea = (
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 64962dfc7242f967e3f931d30dc65f943728ee9e
+
         <div className ="btm-group" role= "group">
           <button className="btn btn-warning btn-sm" onClick={this.handleEdit.bind(this)}>Edit</button>
           <button className="btn btn-success btn-sm read-button" onClick={this.onPressButton.bind(this)}>Read</button>
           <button className="btn btn-danger btn-sm" onClick={this.handleDelete.bind(this)}>Delete Book</button>
           <p>{this.state.textValue}</p>
-<<<<<<< HEAD
+
          
-=======
-        <div>
-          <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}>Read</button>
-          <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
-          <p>{this.state.textValue}</p>
->>>>>>> ac500909741c40abaa0fc4ef28fb894df8267c0b
-=======
-        
->>>>>>> 64962dfc7242f967e3f931d30dc65f943728ee9e
+
         </div>
         
       );

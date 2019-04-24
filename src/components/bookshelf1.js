@@ -38,90 +38,9 @@ class Bookshelf extends Component {
                     id: (Date.now() + 2)
                 }
             ]
-<<<<<<< HEAD
-<<<<<<< HEAD
         };
     }
-    addBook() {
-        this.state.books.push({
-            id: Date.now(),
-            title: prompt('Enter Book Title'),
-            author: prompt('Enter the name of the author'),
-            year: prompt('Enter Year that the book was published'),
-            genre: prompt('Enter Book Genre')
-        });
-        this.setState({
-            books: this.state.books
-        });
-    }
-
-    deleteBooks(id) {
-        let newBookArr = this.state.books;
-        newBookArr.map((book, index) => {
-          if (id === book.id) {
-            newBookArr.splice(index, 1);
-          }
-        });
-        this.setState({
-          books: newBookArr
-        });
-      } 
-    render() {
-        return (
-          <div
-            className="Component-Bg"
-            style={{
-              backgroundImage: "url(" + imgUrl + ")",
-              backgroundSize: "cover",
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat"
-            }}
-          >
-            <div class="other">
-              <div className="shelf">
-                <div className="row">
-                  {/* {this.state.books.map(function(book) {
-                    return (
-                      <Books
-                        title={book.title}
-                        author={book.author}
-                        year={book.year}
-                        genre={book.genre}
-                        image={book.image}
-                      />
-                    );
-                  })} */}
-                  
-                  {this.state.books.map(book => {
-                    return (
-                      <Books
-                        key={book.id}
-                        id={book.id}
-                        deleteHandler={this.deleteBooks.bind(this)}/>
-                    );
-                  })}
-                  
-                </div>
-              </div>
-              <div>
-                <button
-                  className="btn btn-success add-button"
-                  onClick={this.addBook.bind(this)}
-                >
-                  Add a Book
-                </button>
-              </div>
-            </div>
-          </div>
-        );
-    }
-     
-=======
-=======
-
->>>>>>> 64962dfc7242f967e3f931d30dc65f943728ee9e
-        }
-    }
+   
     addBook() {
         this.state.books.push({
             title: prompt('Enter Book Title'),
@@ -182,10 +101,7 @@ class Bookshelf extends Component {
     }
 
 
-<<<<<<< HEAD
->>>>>>> ac500909741c40abaa0fc4ef28fb894df8267c0b
-=======
->>>>>>> 64962dfc7242f967e3f931d30dc65f943728ee9e
+
 }
 
 
