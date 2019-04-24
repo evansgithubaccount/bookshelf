@@ -6,6 +6,7 @@ import info from './bookInfo';
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
 
+ 
 class Bookshelf extends Component {
     constructor() {
         super();
@@ -39,7 +40,7 @@ class Bookshelf extends Component {
                     id: 3
                 }
             ]
-        }
+        };
     }
 
     addBook() {
@@ -97,6 +98,7 @@ class Bookshelf extends Component {
             </div>
         )
     }
+
 
 
 }
