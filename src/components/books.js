@@ -4,7 +4,7 @@ import Bookshelf from './bookshelf1.js';
 import propTypes from 'prop-types';
 import '../css/books.css';
 
-const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
+//const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
 
 class Books extends Component {
   constructor() {
@@ -17,16 +17,16 @@ class Books extends Component {
   }
   componentWillMount() {
     this.state = {
-        // title: this.props.title,
-        // author: this.props.author,
-        // year: this.props.year,
-        // genre: this.props.genre,
-        // image: this.props.image,
-      title: GENERIC_NOTE_TITLE,
-      author: GENERIC_NOTE_AUTHOR,
-      year: GENERIC_NOTE_YEAR,
-      genre: GENERIC_NOTE_GENRE,
-      image: GENERIC_NOTE_IMAGE,
+        title: this.props.title,
+        author: this.props.author,
+        year: this.props.year,
+        genre: this.props.genre,
+        image: this.props.image,
+      // title: GENERIC_NOTE_TITLE,
+      // author: GENERIC_NOTE_AUTHOR,
+      // year: GENERIC_NOTE_YEAR,
+      // genre: GENERIC_NOTE_GENRE,
+      // image: GENERIC_NOTE_IMAGE,
       editMode: false
     };
   }

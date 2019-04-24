@@ -86,15 +86,16 @@ class Bookshelf extends Component {
                       />
                     );
                   })} */}
+                  
                   {this.state.books.map(book => {
                     return (
                       <Books
                         key={book.id}
                         id={book.id}
-                        deleteHandler={this.deleteBooks.bind(this)}
-                      />
+                        deleteHandler={this.deleteBooks.bind(this)}/>
                     );
                   })}
+                  
                 </div>
               </div>
               <div>
