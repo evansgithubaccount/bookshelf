@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Bookshelf from './bookshelf1.js';
 import propTypes from 'prop-types';
 import '../css/books.css';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
 
@@ -19,6 +19,7 @@ class Books extends Component {
             year: this.props.year,
             genre: this.props.genre,
             image: this.props.image,
+            summary: this.props.summary,
             editMode: false,
             textValue: 'This book is unread.'
         }
@@ -35,12 +36,8 @@ class Books extends Component {
         year: this.props.year,
         genre: this.props.genre,
         image: this.props.image,
-      // title: GENERIC_NOTE_TITLE,
-      // author: GENERIC_NOTE_AUTHOR,
-      // year: GENERIC_NOTE_YEAR,
-      // genre: GENERIC_NOTE_GENRE,
-      // image: GENERIC_NOTE_IMAGE,
-      editMode: false
+        summary: this.props.summary,
+        editMode: false
     };
   }
   onPressButton() {
@@ -120,7 +117,7 @@ class Books extends Component {
       buttonArea = (
         <div>
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}><NavLink to="/bookInfo">Read</NavLink></button>
+          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}><Link to={{pathname: '/bookInfo', state:{title: this.state.title, author:this.state.author, summary:this.state.summary} }} id="infoLink" >Read</Link></button>
           <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
           <p>{this.state.textValue}</p>
 
