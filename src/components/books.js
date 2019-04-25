@@ -117,7 +117,7 @@ class Books extends Component {
       buttonArea = (
         <div>
           <button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button>
-          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}><Link to={{pathname: '/bookInfo', state:{title: this.state.title, author:this.state.author, summary:this.state.summary} }} id="infoLink" >Read</Link></button>
+          <button className="btn btn-success read-button" onClick={this.onPressButton.bind(this)}><Link to={{pathname: '/bookInfo', state:{title: this.state.title, author:this.state.author, summary:this.state.summary, image:this.state.image} }} id="infoLink" >Read</Link></button>
           <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
           <p>{this.state.textValue}</p>
 
