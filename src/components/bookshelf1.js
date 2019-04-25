@@ -19,7 +19,8 @@ class Bookshelf extends Component {
                     year: '1987',
                     genre: 'Magical Realism',
                     image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/0997/9780099760115.jpg",
-                    id: 1
+                    id: 1,
+                    summary: "this is the summary it can be as long as you want it to be"
                 },
                 {
                     cover:'',
@@ -40,7 +41,7 @@ class Bookshelf extends Component {
                     id: 3
                 }
             ]
-        };
+        }
     }
     addBook() {
         this.state.books.push({

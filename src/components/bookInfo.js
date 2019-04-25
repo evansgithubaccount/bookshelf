@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import '../css/bookInfo.css';
 
 
-// class BookInformation extends Component {constructor() {
-//     super();
-//     this.state = {
-//         summary: []
-// };
-// render(){
-
-const BookInformation = () => 
-<div>
-    <p>
-       Book Summary:    
-    </p>
-</div>
-
+const BookInformation = (props) => {
+    const title = props.location.state.title;
+    const author = props.location.state.author;
+    const summary = props.location.state.summary
+    return (
+    <div>
+        <h1>{title} by {author}</h1>
+        <p>{summary}</p>
+    </div>
+    )
+}
 
 export default BookInformation;
