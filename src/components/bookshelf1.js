@@ -50,7 +50,8 @@ class Bookshelf extends Component {
                     id: 4,
                     summary: "Bloodthirsty, treacherous and cunning, the Lannisters are in power on the Iron Throne in the name of the boy-king Tommen. The war in the Seven Kingdoms has burned itself out, but in its bitter aftermath new conflicts spark to life. The Martells of Dorne and the Starks of Winterfell seek vengeance for their dead. Euron Crow's Eye, as black a pirate as ever raised a sail, returns from the smoking ruins of Valyria to claim the Iron Isles. From the icy north, where Others threaten the Wall, apprentice Maester Samwell Tarly brings a mysterious babe in arms to the Citadel. Against a backdrop of incest and fratricide, alchemy and murder, victory will go to the men and women possessed of the coldest steel and the coldest hearts"
                 }
-            ]
+            ],
+            deletedBooks: []
         }
     }
     addBook() {
@@ -72,14 +73,24 @@ class Bookshelf extends Component {
         let newBookArr = this.state.books;
         newBookArr.map((book, index) => {
           if (id === book.id) {
-            let deletedBooks = []
-            deletedBooks.push(newBookArr[index]);
+            this.setState({deletedBooks:[index, newBookArr[index]]})
             newBookArr.splice(index, 1);
           }
         });
         this.setState({
-          books: newBookArr
+          books: newBookArr,
         });
+    }
+
+    undoDelete(){
+        let deletedArray = this.state.deletedBooks
+        let newAdd = deletedArray.pop();
+        let index = deletedArray.shift();
+        let bookArray = this.state.books;
+        bookArray.splice(index,0,newAdd);
+        this.setState({
+            books: bookArray
+        })
     }
 
     render() {
@@ -92,6 +103,7 @@ class Bookshelf extends Component {
                 }}>
                 <div className="other">
                     <div className="shelf">
+                    <button className="btn btn-info undo-button" onClick={this.undoDelete.bind(this)}>Undo</button>
                         <div className="row">
                             {
                                 this.state.books.map(book => {
@@ -99,6 +111,7 @@ class Bookshelf extends Component {
                                     key={book.id}
                                     id={book.id}
                                     deleteHandler={this.deleteBook.bind(this)}
+                                    undoHandler={this.undoDelete.bind(this)}
                                     title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} summary={book.summary}/>
                                 })
                             }

@@ -70,6 +70,10 @@ class Books extends Component {
     this.props.deleteHandler(this.props.id);
   }
 
+  handleUndo() {
+    this.props.undoHandler();
+  }
+
   render() {
     let titleElement, authorElement, yearElement, genreElement, buttonArea;
     let imageURL = `${this.props.image}`
