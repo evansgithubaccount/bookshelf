@@ -8,10 +8,10 @@ const BookInformation = (props) => {
     const summary = props.location.state.summary;
     const image = props.location.state.image;
     return (
-    <div>
+    <div class="body">
         <img src = {image}></img>
         <h1>{title} by {author}</h1>
-        <p>{summary}</p>
+        <p id="bookSum">{summary}</p>
     </div>
     )
 }

@@ -21,7 +21,7 @@ class Bookshelf extends Component {
                     genre: 'Magical Realism',
                     image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/0997/9780099760115.jpg",
                     id: 1,
-                    summary: 'this is the summary it can be as long as you want it to be'
+                    summary: 'Staring unflinchingly into the abyss of slavery, this spellbinding novel transforms history into a story as powerful as Exodus and as intimate as a lullaby. Sethe was born a slave and escaped to Ohio, but eighteen years later she is still not free. She has too many memories of Sweet Home, the beautiful farm where so many hideous things happened. Her new home is haunted by the ghost of her baby, who died nameless and whose tombstone is engraved with a single word: Beloved. Filled with bitter poetry and suspense as taut as a rope, Beloved is a towering achievement by Nobel Prize laureate Toni Morrison.'
                 },
                 {
                     cover:'',
@@ -31,7 +31,7 @@ class Bookshelf extends Component {
                     genre: 'Science Fiction',
                     image: "https://images-na.ssl-images-amazon.com/images/I/51dfAXNdszL.jpg",
                     id: 2,
-                    summary: "Douglas Spaulding is a twelve-year-old boy living in Green Town, Illinois. The summer starts with Douglas coming to the realization that he is alive, and he rejoices in the beauty of everything around him. The dandelion wine that he makes with his ten year old brother Tom and his grandfather represents that beauty. At the end of June, July, and August, they press one small bottle for each day of the summer. Douglas is ready to enjoy the magical life of summer, but something is missing. He needs new sneakers. Douglas does not need new sneakers because he wants to look good or because last years pair is out of style. He needs new sneakers because the Royal Crown Cream-Sponge Para Litefoot Tennis Shoes have the magic that he needs to run like the wind and bound through the world. Douglas tells Mr. Sanderson, the shoe salesman, the importance of the sneakers to him and his passion is so great that the old man is transported briefly back to his own childhood, when he wanted to run like gazelles and antelopes. The man is so thrilled by Douglas's speech that he gives him a list of errands to run in exchange for the new shoes. Douglas is now ready to run through the town and its ravine, the gateway to the wilderness, with his pals Charlie Woodman and John Huff. "
+                    summary: "Ray Bradbury's moving recollection of a vanished golden era remains one of his most enchanting novels. Dandelion Wine stands out in the Bradbury literary canon as the author's most deeply personal work, a semi-autobiographical recollection of a magical small-town summer in 1928. Twelve-year-old Douglas Spaulding knows Green Town, Illinois, is as vast and deep as the whole wide world that lies beyond the city limits. It is a pair of brand-new tennis shoes, the first harvest of dandelions for Grandfather's renowned intoxicant, the distant clang of the trolley's bell on a hazy afternoon. It is yesteryear and tomorrow blended into an unforgettable always. But as young Douglas is about to discover, summer can be more than the repetition of established rituals whose mystical power holds time at bay. It can be a best friend moving away, a human time machine who can transport you back to the Civil War, or a sideshow automaton able to glimpse the bittersweet future."
                 },
                 {
                     cover:'',
@@ -47,15 +47,12 @@ class Bookshelf extends Component {
         }
     }
     addBook() {
-        let newURL = (client.search(`${this.state.title} by ${this.state.author}`))
-
         this.state.books.push({
             title: prompt('Enter Book Title'),
             author: prompt('Enter the name of the author'),
             year: prompt('Enter Year that the book was published'),
             genre: prompt('Enter Book Genre'),
             id: Date.now(),
-            image: (newURL.then(function(images){return images[0].url}))
         })
         this.setState({
             books: this.state.books
