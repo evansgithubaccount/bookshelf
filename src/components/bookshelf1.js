@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../css/bookshelf1.css';
 import Books from './books.js';
-key = API_KEY =AIzaSyDXFyEgBEIGiy_XXntJzrFvJmuCAJPD9Ok;
+
 const GoogleImages = require('google-images');
-const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn7MPjLVLNgOvmy2GaP6fQWCXNmaq2X8')
+
+const client = new GoogleImages(' 001600731967734843976:1mhcjlxbpqc', 'AIzaSyDXFyEgBEIGiy_XXntJzrFvJmuCAJPD9Ok')
 
 
  
@@ -52,7 +53,9 @@ class Bookshelf extends Component {
             year: prompt('Enter Year that the book was published'),
             genre: prompt('Enter Book Genre'),
             id: Date.now(),
+            // image: client.search()
         })
+
         this.setState({
             books: this.state.books
         })
