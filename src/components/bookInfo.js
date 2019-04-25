@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../css/bookInfo.css';
+
 
 const BookInformation = (props) => {
     const title = props.location.state.title;
