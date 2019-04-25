@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import '../css/bookshelf1.css';
 import Books from './books.js';
-import {BrowserRouter, Route} from 'react-router-dom';
-import BookInformation from './bookInfo';
+const GoogleImages = require('google-images');
+const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn7MPjLVLNgOvmy2GaP6fQWCXNmaq2X8')
+
 
 let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
 
@@ -44,12 +45,15 @@ class Bookshelf extends Component {
         }
     }
     addBook() {
+        let newURL = (client.search(`${this.state.title} by ${this.state.author}`))
+
         this.state.books.push({
             title: prompt('Enter Book Title'),
             author: prompt('Enter the name of the author'),
             year: prompt('Enter Year that the book was published'),
             genre: prompt('Enter Book Genre'),
             id: Date.now(),
+            image: (newURL.then(function(images){return images[0].url}))
         })
         this.setState({
             books: this.state.books
