@@ -30,7 +30,8 @@ class Bookshelf extends Component {
                     year: '1957',
                     genre: 'Science Fiction',
                     image: "https://images-na.ssl-images-amazon.com/images/I/51dfAXNdszL.jpg",
-                    id: 2
+                    id: 2,
+                    summary: "Douglas Spaulding is a twelve-year-old boy living in Green Town, Illinois. The summer starts with Douglas coming to the realization that he is alive, and he rejoices in the beauty of everything around him. The dandelion wine that he makes with his ten year old brother Tom and his grandfather represents that beauty. At the end of June, July, and August, they press one small bottle for each day of the summer. Douglas is ready to enjoy the magical life of summer, but something is missing. He needs new sneakers. Douglas does not need new sneakers because he wants to look good or because last years pair is out of style. He needs new sneakers because the Royal Crown Cream-Sponge Para Litefoot Tennis Shoes have the magic that he needs to run like the wind and bound through the world. Douglas tells Mr. Sanderson, the shoe salesman, the importance of the sneakers to him and his passion is so great that the old man is transported briefly back to his own childhood, when he wanted to run like gazelles and antelopes. The man is so thrilled by Douglas's speech that he gives him a list of errands to run in exchange for the new shoes. Douglas is now ready to run through the town and its ravine, the gateway to the wilderness, with his pals Charlie Woodman and John Huff. "
                 },
                 {
                     cover:'',
@@ -39,7 +40,8 @@ class Bookshelf extends Component {
                     year: '1999',
                     genre: 'Fiction',
                     image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/JoanneHarris_Chocolat.jpg/220px-JoanneHarris_Chocolat.jpg",
-                    id: 3
+                    id: 3,
+                    summary: "The story takes place in a small town named Lansquenet-sous-Tannes. It is told by the two protagonists: Vianne Rocke and Francis Reynaud. The first one is a woman who stopped in the town with her daughter Anouk. They travel all around the world, not staying anywhere for a long time. The second protagonist is a cure in the local cathedral. Vianne, having come to the town at the Lent, starts to set up a chocolate café there. This, and the fact that she doesn’t go to the church, brings on the hostility of the fanatically devotional cure. But the woman doesn’t pay attention to him. She has in mind to stay here for as much time, as she wants. The cure is angry. He isn’t used to that fact that somebody may contradict him. So, preaching at the church, he indoctrinates the citizens against Vianne. So, at first the woman doesn’t have clients at her shop. But the people are attracted to the unsurpassed fragrance wafting from the shop, and in some time, they start coming to the shop to drink some hot chocolate or eat dainty chocolate sweet. Vianne is a friendly, kind and sincere woman, so she finds a lot of friends among the citizens. She knows them: their problems, secrets, their characters."
                 }
             ]
         }
