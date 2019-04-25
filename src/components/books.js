@@ -121,8 +121,6 @@ class Books extends Component {
           <button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button>
           <p>{this.state.textValue}</p>
 
-         
-
         </div>
         
       );

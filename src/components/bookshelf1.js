@@ -5,8 +5,6 @@ const GoogleImages = require('google-images');
 const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn7MPjLVLNgOvmy2GaP6fQWCXNmaq2X8')
 
 
-let imgUrl = 'https://cdn.wallpapersafari.com/14/1/qgcwDR.png';
-
  
 class Bookshelf extends Component {
     constructor() {
@@ -74,7 +72,6 @@ class Bookshelf extends Component {
         return (
             <div className='Component-Bg'
                 style={{
-                    backgroundImage: 'url(' + imgUrl + ')',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center center',
                     backgroundRepeat: 'no-repeat',
