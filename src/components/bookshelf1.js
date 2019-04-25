@@ -43,7 +43,6 @@ class Bookshelf extends Component {
             ]
         }
     }
-
     addBook() {
         this.state.books.push({
             title: prompt('Enter Book Title'),
