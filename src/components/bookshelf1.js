@@ -20,7 +20,7 @@ class Bookshelf extends Component {
                     genre: 'Magical Realism',
                     image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/0997/9780099760115.jpg",
                     id: 1,
-                    summary: "this is the summary it can be as long as you want it to be"
+                    summary: 'this is the summary it can be as long as you want it to be'
                 },
                 {
                     cover:'',
@@ -86,7 +86,7 @@ class Bookshelf extends Component {
                                     key={book.id}
                                     id={book.id}
                                     deleteHandler={this.deleteBook.bind(this)}
-                                    title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} />
+                                    title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} summary={book.summary}/>
                                 })
                             }
 
