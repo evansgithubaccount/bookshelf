@@ -55,7 +55,9 @@ class Bookshelf extends Component {
             year: prompt('Enter Year that the book was published'),
             genre: prompt('Enter Book Genre'),
             id: Date.now(),
+            // image: client.search()
         })
+
         this.setState({
             books: this.state.books
         })
