@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/bookshelf1.css';
 import Books from './books.js';
+
 const GoogleImages = require('google-images');
 const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn7MPjLVLNgOvmy2GaP6fQWCXNmaq2X8')
  
@@ -61,6 +62,7 @@ class Bookshelf extends Component {
             id: Date.now(),
             summary: "I don't know what this book is about, but it's probably incredible. I mean just look at that title, you just know a book with that title has got to be amazing."
         })
+
         this.setState({
             books: this.state.books
         })
