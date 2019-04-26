@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import '../css/bookshelf1.css';
 import Books from './books.js';
-//key = API_KEY =AIzaSyDXFyEgBEIGiy_XXntJzrFvJmuCAJPD9Ok;
 const GoogleImages = require('google-images');
 const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn7MPjLVLNgOvmy2GaP6fQWCXNmaq2X8')
-
-
  
 class Bookshelf extends Component {
     constructor() {
@@ -41,32 +38,75 @@ class Bookshelf extends Component {
                     image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/JoanneHarris_Chocolat.jpg/220px-JoanneHarris_Chocolat.jpg",
                     id: 3,
                     summary: "The story takes place in a small town named Lansquenet-sous-Tannes. It is told by the two protagonists: Vianne Rocke and Francis Reynaud. The first one is a woman who stopped in the town with her daughter Anouk. They travel all around the world, not staying anywhere for a long time. The second protagonist is a cure in the local cathedral. Vianne, having come to the town at the Lent, starts to set up a chocolate café there. This, and the fact that she doesn’t go to the church, brings on the hostility of the fanatically devotional cure. But the woman doesn’t pay attention to him. She has in mind to stay here for as much time, as she wants. The cure is angry. He isn’t used to that fact that somebody may contradict him. So, preaching at the church, he indoctrinates the citizens against Vianne. So, at first the woman doesn’t have clients at her shop. But the people are attracted to the unsurpassed fragrance wafting from the shop, and in some time, they start coming to the shop to drink some hot chocolate or eat dainty chocolate sweet. Vianne is a friendly, kind and sincere woman, so she finds a lot of friends among the citizens. She knows them: their problems, secrets, their characters."
+                },
+                {
+                    cover:'',
+                    title: 'A Feast For Crows',
+                    author: 'George RR Martin',
+                    year: '2005',
+                    genre: 'Fantasy',
+                    image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/AFeastForCrows.jpg/220px-AFeastForCrows.jpg",
+                    id: 4,
+                    summary: "Bloodthirsty, treacherous and cunning, the Lannisters are in power on the Iron Throne in the name of the boy-king Tommen. The war in the Seven Kingdoms has burned itself out, but in its bitter aftermath new conflicts spark to life. The Martells of Dorne and the Starks of Winterfell seek vengeance for their dead. Euron Crow's Eye, as black a pirate as ever raised a sail, returns from the smoking ruins of Valyria to claim the Iron Isles. From the icy north, where Others threaten the Wall, apprentice Maester Samwell Tarly brings a mysterious babe in arms to the Citadel. Against a backdrop of incest and fratricide, alchemy and murder, victory will go to the men and women possessed of the coldest steel and the coldest hearts"
                 }
-            ]
+            ],
+            deletedBooks: []
         }
     }
     addBook() {
+        let newURL = function(title){(fetch(`https://www.googleapis.com/books/v1/volumes?q=${title}`).then(function(response){
+            return response.json()}).then(function(books){
+                let items = books.items;
+                let book1 = items[0];
+                let volumeInfo = book1.volumeInfo;
+                let imageLinks = volumeInfo.imageLinks;
+                let thumbnail = imageLinks.thumbnail;
+                return thumbnail
+            }))}
+        let newTitle = prompt('Enter Book Title');
+        let newAuthor = prompt('Enter the name of the author');
+        let newYear = prompt('Enter Year that the book was published');
+        let newGenre = prompt('Enter Book Genre');
+        let newImage = newURL(newTitle);
+        console.log(newImage)
         this.state.books.push({
-            title: prompt('Enter Book Title'),
-            author: prompt('Enter the name of the author'),
-            year: prompt('Enter Year that the book was published'),
-            genre: prompt('Enter Book Genre'),
+            title: newTitle,
+            author: newAuthor,
+            year: newYear,
+            genre: newGenre,
             id: Date.now(),
+            summary: "I don't know what this book is about, but it's probably incredible. I mean just look at that title, you just know a book with that title has got to be amazing."
         })
+
         this.setState({
             books: this.state.books
         })
     }
+
     deleteBook(id) {
         let newBookArr = this.state.books;
         newBookArr.map((book, index) => {
           if (id === book.id) {
+            this.setState({deletedBooks:[index, newBookArr[index]]})
             newBookArr.splice(index, 1);
           }
         });
         this.setState({
-          books: newBookArr
+          books: newBookArr,
+          deleted: true
         });
+    }
+
+    undoDelete(){
+        let deletedArray = this.state.deletedBooks
+        let newAdd = deletedArray.pop();
+        let index = deletedArray.shift();
+        let bookArray = this.state.books;
+        bookArray.splice(index,0,newAdd);
+        this.setState({
+            books: bookArray,
+            deleted: false
+        })
     }
 
     render() {
@@ -79,6 +119,7 @@ class Bookshelf extends Component {
                 }}>
                 <div className="other">
                     <div className="shelf">
+                    <button className={`btn btn-info sticky-top ${this.state.deleted ? 'show-undo':'undo-button'}`} onClick={this.undoDelete.bind(this)}>Undo</button>
                         <div className="row">
                             {
                                 this.state.books.map(book => {
@@ -86,6 +127,7 @@ class Bookshelf extends Component {
                                     key={book.id}
                                     id={book.id}
                                     deleteHandler={this.deleteBook.bind(this)}
+                                    undoHandler={this.undoDelete.bind(this)}
                                     title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} summary={book.summary}/>
                                 })
                             }

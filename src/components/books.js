@@ -5,7 +5,6 @@ import propTypes from 'prop-types';
 import '../css/books.css';
 import {Link} from 'react-router-dom';
 
-//const GENERIC_NOTE_TITLE = "", GENERIC_NOTE_AUTHOR = "", GENERIC_NOTE_YEAR ="", GENERIC_NOTE_GENRE= "", GENERIC_NOTE_IMAGE= "";
 
 class Books extends Component {
   constructor() {
@@ -68,6 +67,10 @@ class Books extends Component {
   }
   handleDelete() {
     this.props.deleteHandler(this.props.id);
+  }
+
+  handleUndo() {
+    this.props.undoHandler();
   }
 
   render() {
