@@ -55,11 +55,26 @@ class Bookshelf extends Component {
         }
     }
     addBook() {
+        let newURL = function(title){(fetch(`https://www.googleapis.com/books/v1/volumes?q=${title}`).then(function(response){
+            return response.json()}).then(function(books){
+                let items = books.items;
+                let book1 = items[0];
+                let volumeInfo = book1.volumeInfo;
+                let imageLinks = volumeInfo.imageLinks;
+                let thumbnail = imageLinks.thumbnail;
+                return thumbnail
+            }))}
+        let newTitle = prompt('Enter Book Title');
+        let newAuthor = prompt('Enter the name of the author');
+        let newYear = prompt('Enter Year that the book was published');
+        let newGenre = prompt('Enter Book Genre');
+        let newImage = newURL(newTitle);
+        console.log(newImage)
         this.state.books.push({
-            title: prompt('Enter Book Title'),
-            author: prompt('Enter the name of the author'),
-            year: prompt('Enter Year that the book was published'),
-            genre: prompt('Enter Book Genre'),
+            title: newTitle,
+            author: newAuthor,
+            year: newYear,
+            genre: newGenre,
             id: Date.now(),
             summary: "I don't know what this book is about, but it's probably incredible. I mean just look at that title, you just know a book with that title has got to be amazing."
         })
@@ -79,6 +94,7 @@ class Bookshelf extends Component {
         });
         this.setState({
           books: newBookArr,
+          deleted: true
         });
     }
 
@@ -89,7 +105,8 @@ class Bookshelf extends Component {
         let bookArray = this.state.books;
         bookArray.splice(index,0,newAdd);
         this.setState({
-            books: bookArray
+            books: bookArray,
+            deleted: false
         })
     }
 
@@ -103,7 +120,7 @@ class Bookshelf extends Component {
                 }}>
                 <div className="other">
                     <div className="shelf">
-                    <button className="btn btn-info undo-button" onClick={this.undoDelete.bind(this)}>Undo</button>
+                    <button className={`btn btn-info sticky-top ${this.state.deleted ? 'show-undo':'undo-button'}`} onClick={this.undoDelete.bind(this)}>Undo</button>
                         <div className="row">
                             {
                                 this.state.books.map(book => {

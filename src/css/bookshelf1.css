@@ -13,5 +13,12 @@
 .undo-button {
     margin-left:43.7vw;
     margin-top: 1vh;
+    visibility: hidden;
+}
+
+.show-undo {
+    margin-left: 43.7vw;
+    margin-top: 1vh;
+    visibility:visible;
 }
 
