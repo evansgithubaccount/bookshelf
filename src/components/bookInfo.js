@@ -19,6 +19,8 @@ const BookInformation = (props) => {
         <p id="bookSum">{summary}</p>
         <button className="btn btn-danger" ><Link to={{pathname: '/bookshelf1' }} id="infoLink">Back</Link></button>
     </div>
+    </div>
+    </div>
     )
 }
 
