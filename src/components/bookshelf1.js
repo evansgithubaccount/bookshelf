@@ -55,21 +55,10 @@ class Bookshelf extends Component {
         }
     }
     addBook() {
-        let newURL = function(title){(fetch(`https://www.googleapis.com/books/v1/volumes?q=${title}`).then(function(response){
-            return response.json()}).then(function(books){
-                let items = books.items;
-                let book1 = items[0];
-                let volumeInfo = book1.volumeInfo;
-                let imageLinks = volumeInfo.imageLinks;
-                let thumbnail = imageLinks.thumbnail;
-                return thumbnail
-            }))}
         let newTitle = prompt('Enter Book Title');
         let newAuthor = prompt('Enter the name of the author');
         let newYear = prompt('Enter Year that the book was published');
         let newGenre = prompt('Enter Book Genre');
-        let newImage = newURL(newTitle);
-        console.log(newImage)
         this.state.books.push({
             title: newTitle,
             author: newAuthor,
@@ -112,12 +101,7 @@ class Bookshelf extends Component {
 
     render() {
         return (
-            <div className='Component-Bg'
-                style={{
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                    backgroundRepeat: 'no-repeat',
-                }}>
+            <div className='Component-Bg'>
                 <div className="other">
                     <div className="shelf">
                     <button className={`btn btn-info sticky-top ${this.state.deleted ? 'show-undo':'undo-button'}`} onClick={this.undoDelete.bind(this)}>Undo</button>
