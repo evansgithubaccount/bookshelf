@@ -58,13 +58,7 @@ class Books extends Component {
   }
   
   handleSave() {
-    this.setState({
-      title: this.refs.titleContent.value,
-      author: this.refs.authorContent.value,
-      year: this.refs.yearContent.value,
-      genre: this.refs.genreContent.value,
-      editMode: false
-    });
+    this.props.saveBook(this)
   }
   handleDelete() {
     this.props.deleteHandler(this.props.id);
@@ -131,7 +125,7 @@ class Books extends Component {
     }
 
     return (
-      <div className="col-sm-auto">
+      <div className={`col-sm-auto`}>
         <div className="card card-view">
           <div className="card-body dark">
             <img id="images" src={imageURL}   style={{justifyContent: 'center',alignItems: 'center',}} alt="" />

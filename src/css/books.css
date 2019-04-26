@@ -27,3 +27,11 @@ h5 {
 #infoLink {
     color: white;
 }
+
+.showBook {
+    visibility: visible;
+}
+
+.hideBook {
+    visibility:hidden;
+}
