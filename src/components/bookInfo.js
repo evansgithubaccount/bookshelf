@@ -8,7 +8,7 @@ const BookInformation = (props) => {
     const title = props.location.state.title;
     const author = props.location.state.author;
     const summary = props.location.state.summary;
-    const image = props.location.state.image;
+    const image = props.location.state.image
     
     return (
     <div class="body">

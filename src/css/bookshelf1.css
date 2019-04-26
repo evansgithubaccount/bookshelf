@@ -9,7 +9,8 @@
 .Component-Bg {
     height: 100vh;
     background-image: url('https://cdn.wallpapersafari.com/14/1/qgcwDR.png');
-    background-size:cover;
+    background-size: cover;
+    overflow: scroll;
 }
 
 .undo-button {
