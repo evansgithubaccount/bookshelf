@@ -35,24 +35,24 @@ class Bookshelf extends Component {
                 {
                     showGenre: true,
                     cover:'',
-                    title: 'Chocolat',
-                    author: 'Joanne Harris',
-                    year: '1999',
-                    genre: 'Fiction',
-                    image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/JoanneHarris_Chocolat.jpg/220px-JoanneHarris_Chocolat.jpg",
+                    title: 'The Bell Jar',
+                    author: 'Sylvia Plath',
+                    year: '1963',
+                    genre: 'Roman à clef',
+                    image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Belljarfirstedition.jpg/220px-Belljarfirstedition.jpg",
                     id: 3,
-                    summary: "The story takes place in a small town named Lansquenet-sous-Tannes. It is told by the two protagonists: Vianne Rocke and Francis Reynaud. The first one is a woman who stopped in the town with her daughter Anouk. They travel all around the world, not staying anywhere for a long time. The second protagonist is a cure in the local cathedral. Vianne, having come to the town at the Lent, starts to set up a chocolate café there. This, and the fact that she doesn’t go to the church, brings on the hostility of the fanatically devotional cure. But the woman doesn’t pay attention to him. She has in mind to stay here for as much time, as she wants. The cure is angry. He isn’t used to that fact that somebody may contradict him. So, preaching at the church, he indoctrinates the citizens against Vianne. So, at first the woman doesn’t have clients at her shop. But the people are attracted to the unsurpassed fragrance wafting from the shop, and in some time, they start coming to the shop to drink some hot chocolate or eat dainty chocolate sweet. Vianne is a friendly, kind and sincere woman, so she finds a lot of friends among the citizens. She knows them: their problems, secrets, their characters."
+                    summary: "Sylvia Plath's shocking, realistic, and intensely emotional novel about a woman falling into the grip of insanity. Esther Greenwood is brilliant, beautiful, enormously talented, and successful, but slowly going under—maybe for the last time. In her acclaimed and enduring masterwork, Sylvia Plath brilliantly draws the reader into Esther's breakdown with such intensity that her insanity becomes palpably real, even rational—as accessible an experience as going to the movies. A deep penetration into the darkest and most harrowing corners of the human psyche, The Bell Jar is an extraordinary accomplishment and a haunting American classic."
                 },
                 {
                     showGenre: true,
                     cover:'',
-                    title: 'A Feast For Crows',
+                    title: 'A Game Of Thrones',
                     author: 'George RR Martin',
-                    year: '2005',
+                    year: '1996',
                     genre: 'Fantasy',
-                    image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/AFeastForCrows.jpg/220px-AFeastForCrows.jpg",
+                    image: "https://images.gr-assets.com/books/1554191954l/13496.jpg",
                     id: 4,
-                    summary: "Bloodthirsty, treacherous and cunning, the Lannisters are in power on the Iron Throne in the name of the boy-king Tommen. The war in the Seven Kingdoms has burned itself out, but in its bitter aftermath new conflicts spark to life. The Martells of Dorne and the Starks of Winterfell seek vengeance for their dead. Euron Crow's Eye, as black a pirate as ever raised a sail, returns from the smoking ruins of Valyria to claim the Iron Isles. From the icy north, where Others threaten the Wall, apprentice Maester Samwell Tarly brings a mysterious babe in arms to the Citadel. Against a backdrop of incest and fratricide, alchemy and murder, victory will go to the men and women possessed of the coldest steel and the coldest hearts"
+                    summary: "Long ago, in a time forgotten, a preternatural event threw the seasons out of balance. In a land where summers can last decades and winters a lifetime, trouble is brewing. The cold is returning, and in the frozen wastes to the north of Winterfell, sinister and supernatural forces are massing beyond the kingdom’s protective Wall. At the center of the conflict lie the Starks of Winterfell, a family as harsh and unyielding as the land they were born to. Sweeping from a land of brutal cold to a distant summertime kingdom of epicurean plenty, here is a tale of lords and ladies, soldiers and sorcerers, assassins and bastards, who come together in a time of grim omens. Here an enigmatic band of warriors bear swords of no human metal; a tribe of fierce wildlings carry men off into madness; a cruel young dragon prince barters his sister to win back his throne; and a determined woman undertakes the most treacherous of journeys. Amid plots and counterplots, tragedy and betrayal, victory and terror, the fate of the Starks, their allies, and their enemies hangs perilously in the balance, as each endeavors to win that deadliest of conflicts: the game of thrones."
                 }
             ],
             deletedBooks: [],
