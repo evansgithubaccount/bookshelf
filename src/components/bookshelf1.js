@@ -110,8 +110,7 @@ class Bookshelf extends Component {
             year: book.refs.yearContent.value,
             genre: book.refs.genreContent.value,
             editMode: false
-          });
-        this.state
+          })
     }
 
     render() {
