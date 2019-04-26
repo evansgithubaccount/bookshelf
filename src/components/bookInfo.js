@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/bookInfo.css';
 import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 const BookInformation = (props) => {
@@ -13,6 +14,7 @@ const BookInformation = (props) => {
         <img src = {image}></img>
         <h1>{title} by {author}</h1>
         <p id="bookSum">{summary}</p>
+        <button className="btn btn-danger" ><Link to={{pathname: '/bookshelf1' }} id="infoLink">Back</Link></button>
     </div>
     )
 }
