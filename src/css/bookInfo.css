@@ -4,7 +4,7 @@
 }
 
 .hero-image {
-	background: url('https://previews.123rf.com/images/wamsler/wamsler1412/wamsler141200055/34940584-row-of-books-grungy-background-free-copy-space.jpg') no-repeat center; 
+	background: url('./bookpic.jpg') no-repeat center; 
 	background-size: cover;
 	height: 500px;
 	position: relative;

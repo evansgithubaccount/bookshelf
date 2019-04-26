@@ -7,7 +7,7 @@ const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn
 class Bookshelf extends Component {
     constructor() {
         super();
-        this.state = {
+        this.state = { 
             books: [
                 {
                     cover: '',
@@ -50,7 +50,7 @@ class Bookshelf extends Component {
                     summary: "Bloodthirsty, treacherous and cunning, the Lannisters are in power on the Iron Throne in the name of the boy-king Tommen. The war in the Seven Kingdoms has burned itself out, but in its bitter aftermath new conflicts spark to life. The Martells of Dorne and the Starks of Winterfell seek vengeance for their dead. Euron Crow's Eye, as black a pirate as ever raised a sail, returns from the smoking ruins of Valyria to claim the Iron Isles. From the icy north, where Others threaten the Wall, apprentice Maester Samwell Tarly brings a mysterious babe in arms to the Citadel. Against a backdrop of incest and fratricide, alchemy and murder, victory will go to the men and women possessed of the coldest steel and the coldest hearts"
                 }
             ],
-            deletedBooks: []
+            deletedBooks: [],
         }
     }
     addBook() {
@@ -110,6 +110,7 @@ class Bookshelf extends Component {
                                     return <Books 
                                     key={book.id}
                                     id={book.id}
+                                    bookArray = {this.state.books}
                                     deleteHandler={this.deleteBook.bind(this)}
                                     undoHandler={this.undoDelete.bind(this)}
                                     title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} summary={book.summary}/>
