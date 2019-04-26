@@ -64,7 +64,7 @@ class Bookshelf extends Component {
             year: newYear,
             genre: newGenre,
             id: Date.now(),
-            summary: "I don't know what this book is about, but it's probably incredible. I mean just look at that title, you just know a book with that title has got to be amazing."
+            summary: "I don't know what this book is about, but it's probably incredible." 
         })
 
         this.setState({
