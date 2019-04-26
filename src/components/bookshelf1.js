@@ -118,18 +118,6 @@ class Bookshelf extends Component {
             <div className='Component-Bg'>
                 <div className="other">
                     <div className="shelf">
-                     <select name="genre">
-                        <option value="ALL">All</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Science Fiction">Science Fiction</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Fiction">Fiction</option>
-                        <option value="Poetry">Poetry</option>
-                        <option value="Mystery">Mystery</option>
-                        <option value="Historical">Historical Drama</option>
-                        <option value="OTHER">Other</option>
-                    </select>
-                    <button type="button" className="sortButton">Sort</button>
                     <button className={`btn btn-info sticky-top ${this.state.deleted ? 'show-undo':'undo-button'}`} onClick={this.undoDelete.bind(this)}>Undo</button>
                         <div className="row">
                             {
