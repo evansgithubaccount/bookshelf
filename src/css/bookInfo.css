@@ -1,8 +1,27 @@
 .body {
-    background-color: bisque;
-    height: 100vh;
+	background-color: rgb(235, 223, 95);
+	height: 100vh;
 }
 
+.hero-image {
+	background: url('https://previews.123rf.com/images/wamsler/wamsler1412/wamsler141200055/34940584-row-of-books-grungy-background-free-copy-space.jpg') no-repeat center; 
+	background-size: cover;
+	height: 500px;
+	position: relative;
+	
+  }
+  
+  .hero-text {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	bottom: 50%;
+	transform: translate(-50%, -50%);
+	color: black;
+	padding: 35px;
+  }
+  
 h1 {
     text-align: center;
 }
@@ -15,6 +34,7 @@ img {
 }
 
 #bookSum {
-    margin-left: 20vw;
-    margin-right: 20vw;
+	font-size: x-large;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
