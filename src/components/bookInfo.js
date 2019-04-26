@@ -9,7 +9,9 @@ const BookInformation = (props) => {
     const author = props.location.state.author;
     const summary = props.location.state.summary;
     const image = props.location.state.image;
+
     const savedBooks = props.location.state.bookArray;
+
     
     return (
     <div class="body">
