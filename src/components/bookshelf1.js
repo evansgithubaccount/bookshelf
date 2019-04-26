@@ -7,7 +7,7 @@ const client = new GoogleImages(' 007236372154556415134:5xdnqjoytco', 'AIzaSyDIn
 class Bookshelf extends Component {
     constructor() {
         super();
-        this.state = {
+        this.state = { 
             books: [
                 {
                     cover: '',
@@ -50,32 +50,21 @@ class Bookshelf extends Component {
                     summary: "Bloodthirsty, treacherous and cunning, the Lannisters are in power on the Iron Throne in the name of the boy-king Tommen. The war in the Seven Kingdoms has burned itself out, but in its bitter aftermath new conflicts spark to life. The Martells of Dorne and the Starks of Winterfell seek vengeance for their dead. Euron Crow's Eye, as black a pirate as ever raised a sail, returns from the smoking ruins of Valyria to claim the Iron Isles. From the icy north, where Others threaten the Wall, apprentice Maester Samwell Tarly brings a mysterious babe in arms to the Citadel. Against a backdrop of incest and fratricide, alchemy and murder, victory will go to the men and women possessed of the coldest steel and the coldest hearts"
                 }
             ],
-            deletedBooks: []
+            deletedBooks: [],
         }
     }
     addBook() {
-        let newURL = function(title){(fetch(`https://www.googleapis.com/books/v1/volumes?q=${title}`).then(function(response){
-            return response.json()}).then(function(books){
-                let items = books.items;
-                let book1 = items[0];
-                let volumeInfo = book1.volumeInfo;
-                let imageLinks = volumeInfo.imageLinks;
-                let thumbnail = imageLinks.thumbnail;
-                return thumbnail
-            }))}
         let newTitle = prompt('Enter Book Title');
         let newAuthor = prompt('Enter the name of the author');
         let newYear = prompt('Enter Year that the book was published');
         let newGenre = prompt('Enter Book Genre');
-        let newImage = newURL(newTitle);
-        console.log(newImage)
         this.state.books.push({
             title: newTitle,
             author: newAuthor,
             year: newYear,
             genre: newGenre,
             id: Date.now(),
-            summary: "I don't know what this book is about, but it's probably incredible. I mean just look at that title, you just know a book with that title has got to be amazing."
+            summary: "I don't know what this book is about, but it's probably incredible." 
         })
 
         this.setState({
@@ -111,12 +100,7 @@ class Bookshelf extends Component {
 
     render() {
         return (
-            <div className='Component-Bg'
-                style={{
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                    backgroundRepeat: 'no-repeat',
-                }}>
+            <div className='Component-Bg'>
                 <div className="other">
                     <div className="shelf">
                     <button className={`btn btn-info sticky-top ${this.state.deleted ? 'show-undo':'undo-button'}`} onClick={this.undoDelete.bind(this)}>Undo</button>
@@ -126,6 +110,7 @@ class Bookshelf extends Component {
                                     return <Books 
                                     key={book.id}
                                     id={book.id}
+                                    bookArray = {this.state.books}
                                     deleteHandler={this.deleteBook.bind(this)}
                                     undoHandler={this.undoDelete.bind(this)}
                                     title={book.title} author={book.author} year={book.year} genre={book.genre} image={book.image} summary={book.summary}/>
