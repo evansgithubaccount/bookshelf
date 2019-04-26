@@ -1,0 +1,20 @@
+.body {
+    background-color: bisque;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    height: 35vh;
+    width: auto;
+    margin-left: 42vw;;
+    margin-top: 2vh;
+}
+
+#bookSum {
+    margin-left: 20vw;
+    margin-right: 20vw;
+}

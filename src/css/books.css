@@ -1,6 +1,7 @@
 .card-view{
     margin: 50px;
     border: solid black;
+    background-color:bisque;
 }
 .button {
     padding: 15px;
@@ -18,7 +19,11 @@ h5 {
 #images{
     height: 150px;
     width: 100px;
-   margin: 25%;
+   margin: 22%;
    margin-bottom: 0%; 
    margin-top: 0%;
+}
+
+#infoLink {
+    color: white;
 }
